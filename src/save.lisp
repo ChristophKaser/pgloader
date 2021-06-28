@@ -43,7 +43,7 @@
     (load ql.lisp)
     (let* ((quickstart (find-package "QUICKLISP-QUICKSTART"))
            (ql-install (find-symbol "INSTALL" quickstart)))
-      (funcall ql-install :path qldir :proxy (getenv "http_proxy"))))
+      (funcall ql-install :path qldir :proxy (getenv "http_proxy") :dist-url "http://beta.quicklisp.org/dist/quicklisp/2019-11-30/distinfo.txt" )))
 
   ;;
   ;; Now that we have Quicklisp, load it and push our copy of pgloader in

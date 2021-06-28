@@ -89,7 +89,7 @@ $(QLDIR)/setup.lisp:
 	curl -o $(BUILDDIR)/quicklisp.lisp http://beta.quicklisp.org/quicklisp.lisp
 	$(CL) $(CL_OPTS) --load $(BUILDDIR)/quicklisp.lisp                        \
              --load src/getenv.lisp                                               \
-             --eval '(quicklisp-quickstart:install :path "$(BUILDDIR)/quicklisp" :proxy (getenv "http_proxy"))' \
+             --eval '(quicklisp-quickstart:install :path "$(BUILDDIR)/quicklisp" :proxy (getenv "http_proxy") :dist-url "http://beta.quicklisp.org/dist/quicklisp/2019-11-30/distinfo.txt")' \
              --eval '(quit)'
 
 quicklisp: $(QLDIR)/setup.lisp ;
